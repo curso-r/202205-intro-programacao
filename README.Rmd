@@ -80,16 +80,17 @@ pasta <- "exemplos_de_aula/"
 
 knitr::kable(
   tibble::tibble(
-    script = CursoRopen:::list_github_files(params$main_repo, pasta, ".R$"),
+    script = list.files("exemplos_de_aula/"),
     link = paste0(
       "https://github.com/curso-r/",
       params$turma,
       "/blob/master/",
       script
-    )
-  ) %>%
-    dplyr::mutate(script = glue::glue("[{script}]({link})")) %>%
-    dplyr::select(script)
+    ) 
+  ) |>
+    dplyr::mutate(script = glue::glue("[{script}]({link})")) |>
+    dplyr::select(script) |> 
+    dplyr::slice(1)
 )
 ```
 

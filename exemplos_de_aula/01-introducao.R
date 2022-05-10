@@ -8,12 +8,14 @@
 
 # Rodando códigos (o R como calculadora) ----------------------------------
 
-# ATALHO para rodar o código: CTRL + ENTER  
+# ATALHO para rodar o código: CTRL + ENTER
 # Mesmo atalho no Mac: Command + ENTER
 
 
 # adição
-1 + 1
+1 + 1 + 1
+1 - 1
+1 * 2
 
 # subtração
 4 - 2
@@ -26,6 +28,8 @@
 
 # potência
 4 ^ 2
+
+6 %% 3
 
 # Criando objetos/variáveis -----------------------------------------------
 
@@ -105,12 +109,12 @@ a <- 10
 obj <- "a"
 obj2 <- "masculino"
 
-# note que na aba "variáveis" os formatos das variáveis "obj" e "a" 
+# note que na aba "variáveis" os formatos das variáveis "obj" e "a"
 # são diferentes
 
 # Valores lógicos/booleanos (verdadeiro ou falso)
 
-class(TRUE) 
+class(TRUE)
 class(FALSE)
 
 # Vetores -----------------------------------------------------------------
@@ -208,7 +212,7 @@ vetor1 + vetor2
 # a. Guarde em um objeto uma sequência de números que comece
 # em 0 e termine em 5.
 
-# b. Use subsetting para fazer o R devolver o primeiro número dessa 
+# b. Use subsetting para fazer o R devolver o primeiro número dessa
 # sequência.
 # Em seguida, faça o R devolver o último número da sequência.
 
@@ -259,7 +263,7 @@ mean(vetor_exemplos)
 
 median(vetor_exemplos)
 
-# Exemplo 3 var - Como calcular uma variância 
+# Exemplo 3 var - Como calcular uma variância
 
 var(vetor_exemplos)
 
@@ -299,7 +303,7 @@ resultado_colado <- paste0(1, "a")
 # 1 - O R propriamente dito é aquela caixinha onde se lê "Console" escrito
 # em cima
 
-# 2 - Você pode escrever comeando direto nele, do lado daquele sinal de 
+# 2 - Você pode escrever comeando direto nele, do lado daquele sinal de
 # maior: ">"
 
 # É muito comum você fazer contas direto no Console, por exemplo.
@@ -308,7 +312,7 @@ resultado_colado <- paste0(1, "a")
 # 5+1, 4+2, 1-1, 1/1 etc
 
 # 3 - O jeito mais comum de programar em R é escrevendo vários comandos em
-# um arquivo de texto e executando todos eles de uma vez, manualmente ou 
+# um arquivo de texto e executando todos eles de uma vez, manualmente ou
 # talvez até programando o computador para fazer isso.
 
 # 4 - Aprendemos vários exemplos de comandos que podemos usar no R:

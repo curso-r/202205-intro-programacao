@@ -36,20 +36,9 @@ Fora do horário de aula ou monitoria:
 
 ## Scripts utilizados em aula
 
-| script                                                                                                                                                             |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [exemplos\_de\_aula/01-introducao.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/01-introducao.R)                             |
-| [exemplos\_de\_aula/02-tabelas.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/02-tabelas.R)                                   |
-| [exemplos\_de\_aula/03-comparacoes-logicas-e-NA.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/03-comparacoes-logicas-e-NA.R) |
-| [exemplos\_de\_aula/04-filtros.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/04-filtros.R)                                   |
-| [exemplos\_de\_aula/05-pipe.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/05-pipe.R)                                         |
-| [exemplos\_de\_aula/06-loops.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/06-loops.R)                                       |
-| [exemplos\_de\_aula/07-controle-de-fluxo.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/07-controle-de-fluxo.R)               |
-| [exemplos\_de\_aula/08-loops-com-if.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/08-loops-com-if.R)                         |
-| [exemplos\_de\_aula/09-funcoes.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/09-funcoes.R)                                   |
-| [exemplos\_de\_aula/09-instalar-pacotes.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/09-instalar-pacotes.R)                 |
-| [exemplos\_de\_aula/10-manipulacao-arquivos.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/10-manipulacao-arquivos.R)         |
-| [exemplos\_de\_aula/11-exemplo-source.R](https://github.com/curso-r/202205-intro-programacao/blob/master/exemplos_de_aula/11-exemplo-source.R)                     |
+| script                                                                                             |
+|:---------------------------------------------------------------------------------------------------|
+| [01-introducao.R](https://github.com/curso-r/202205-intro-programacao/blob/master/01-introducao.R) |
 
 ## Trabalhos finais premiados
 
