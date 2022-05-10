@@ -80,11 +80,13 @@ pasta <- "exemplos_de_aula/"
 
 knitr::kable(
   tibble::tibble(
-    script = list.files("exemplos_de_aula/"),
+    script = list.files(pasta),
     link = paste0(
-      "https://github.com/curso-r/",
+      "https://raw.githubusercontent.com/curso-r/",
       params$turma,
-      "/blob/master/",
+      "/main/",
+      pasta,
+      "/",
       script
     ) 
   ) |>
