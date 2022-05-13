@@ -96,6 +96,28 @@ knitr::kable(
 )
 ```
 
+## Scripts aula prática
+
+```{r}
+pasta <- "aula_pratica/"
+
+
+knitr::kable(
+  tibble::tibble(
+    script = list.files(pasta),
+    link = paste0(
+      "https://raw.githubusercontent.com/curso-r/",
+      params$turma,
+      "/main/",
+      pasta,
+      "/",
+      script
+    ) 
+  ) |>
+    dplyr::mutate(script = glue::glue("[{script}]({link})")) |>
+    dplyr::select(script)
+)
+```
 
 ## Trabalhos finais premiados
 
