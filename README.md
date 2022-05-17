@@ -36,15 +36,18 @@ Fora do horário de aula ou monitoria:
 
 ## Scripts utilizados em aula
 
-| script                                                                                                                       |
-|:-----------------------------------------------------------------------------------------------------------------------------|
-| [01-introducao.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//01-introducao.R) |
+| script                                                                                                                                                   |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [01-introducao.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//01-introducao.R)                             |
+| [02-tabelas.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//02-tabelas.R)                                   |
+| [03-comparacoes-logicas-e-NA.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//03-comparacoes-logicas-e-NA.R) |
 
 ## Scripts aula prática
 
-| script                                                                                                                            |
-|:----------------------------------------------------------------------------------------------------------------------------------|
-| [01-exemplo\_script.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//01-exemplo_script.R) |
+| script                                                                                                                             |
+|:-----------------------------------------------------------------------------------------------------------------------------------|
+| [01-exemplo\_script.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//01-exemplo_script.R)  |
+| [02-exemplo-tabelas.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//02-exemplo-tabelas.R) |
 
 ## Trabalhos finais premiados
 

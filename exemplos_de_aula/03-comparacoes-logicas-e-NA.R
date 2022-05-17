@@ -5,7 +5,7 @@
 class(TRUE)
 class(FALSE)
 
-# TRUE e FALSE são nomes reservados 
+# TRUE e FALSE são nomes reservados
 
 TRUE <- 1
 
@@ -59,8 +59,23 @@ numeros <- c(4, 8, 15, 16, 23, 42)
 # seleciona apenas o primeiro elemento do vetor "numeros"
 numeros[c(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE)]
 
+numeros[c(TRUE, TRUE, FALSE, FALSE, FALSE, TRUE)]
+
+numeros[numeros > 20]
+numeros[numeros < 30]
+numeros[numeros %% 2 == 0]
+
 # seleciona apenas aqueles elementos do vetor "numeros" que forem iguais a 15
 numeros[numeros == 15]
+
+# no dplyr, vamos fazer assim
+library(readr)
+
+dados_voos_jan <- read_csv2("dados/voos_de_janeiro.csv")
+
+library(dplyr)
+
+filter(dados_voos_jan, distancia > 100)
 
 # Exercícios --------------------------------------------------------------
 
@@ -69,25 +84,30 @@ numeros[numeros == 15]
 
 vetor <- c(4, 8, 10, 15, 16, 23, 42)
 
+# vetor >= 10
 
+vetor[vetor >= 10]
 
 # Operadores lógicos ----------
 
-## & - E - Para ser verdadeiro, os dois lados 
+## & - E - Para ser verdadeiro, os dois lados
 # precisam resultar em TRUE
 
 x <- 5
-x >= 3 & x <=7
+x >= 3 & x <= 7
 
 
 y <- 2
 y >= 3 & y <= 7
 
-## | - OU - Para ser verdadeiro, apenas um dos 
+## | - OU - Para ser verdadeiro, apenas um dos
 # lados precisa ser verdadeiro
 
 y <- 2
-y >= 3 | y <=7
+y >= 3 | y <= 7
+
+y <- 15
+y <= -10 | y >= 10
 
 y <- 1
 y >= 3 | y == 0
@@ -108,10 +128,14 @@ x_vetor <= 50 & y_vetor > 10
 
 
 w <- 5
-(!w < 4)
-
+!(w < 4)
+w >= 4 # é equivalente a esse teste
 
 !(x_vetor > 50 | y_vetor < 10)
+
+unique(dados_voos_jan$cauda)
+
+filter(dados_voos_jan, !cauda %in% c("N14228", "N24211", "N619AA"))
 
 
 # Valores especiais -------------------------------------------------------
@@ -163,7 +187,7 @@ is.null(NULL)
 
 # E se quisermos calcular coisas com a coluna atraso_chegada?
 
-sum(base_de_dados$atraso_chegada) 
+sum(base_de_dados$atraso_chegada)
 
 # A coluna atraso_chegada possui NA, por isso a soma dela será NA!
 
@@ -177,7 +201,7 @@ sum(is.na(base_de_dados$atraso_chegada)) # Quantos NA tem na coluna?
 # pois cada TRUE (presença de NA) será contabilizado como 1.
 
 
-# ... e se quisermos ignorar o NA? 
+# ... e se quisermos ignorar o NA?
 # Algumas funções possuem um argumento para remover os NA:
 # na.rm = TRUE
 
@@ -190,10 +214,10 @@ min(base_de_dados$atraso_chegada, na.rm = TRUE)
 # Maior valor encontrado: o maior número encontrado na coluna
 max(base_de_dados$atraso_chegada, na.rm = TRUE)
 
-# Média 
+# Média
 mean(base_de_dados$atraso_chegada, na.rm = TRUE)
 
-# Mediana 
+# Mediana
 median(base_de_dados$atraso_chegada, na.rm = TRUE)
 
 # Variância
@@ -204,5 +228,5 @@ sd(base_de_dados$atraso_chegada, na.rm = TRUE)
 
 
 # Exercícios ------------------------------------------
-# 1. Calcule o valor mínimo e valor máximo da coluna "atraso_saida". O que 
+# 1. Calcule o valor mínimo e valor máximo da coluna "atraso_saida". O que
 # esses valores significam?
