@@ -163,7 +163,12 @@ idade_ana == idade_beto
 
 idade_beto == idade_carla
 
+idade_beto == NA
+
 5 == NA
+
+is.na(idade_beto)
+is.na(idade_ana)
 
 # Use as funções is.na(), is.nan(), is.infinite() e is.null()
 # para testar se um objeto é um desses valores.
@@ -178,6 +183,12 @@ is.nan(0 / 0)
 idades <- c(15, 64, 31, NA, 59)
 is.na(idades)
 
+pos <- 1:length(idades)
+
+idades[!is.na(idades)]
+pos[!is.na(idades)]
+pos[is.na(idades)]
+
 is.nan(NaN)
 is.infinite(10 ^ 309)
 is.null(NULL)
@@ -185,9 +196,13 @@ is.null(NULL)
 
 # Dataframes e funções ------------
 
+library(readr)
+
+base_de_dados <- read_csv2("dados/voos_de_janeiro.csv")
+
 # E se quisermos calcular coisas com a coluna atraso_chegada?
 
-sum(base_de_dados$atraso_chegada)
+sum(base_de_dados$atraso_chegada, na.rm = TRUE)
 
 # A coluna atraso_chegada possui NA, por isso a soma dela será NA!
 
@@ -230,3 +245,31 @@ sd(base_de_dados$atraso_chegada, na.rm = TRUE)
 # Exercícios ------------------------------------------
 # 1. Calcule o valor mínimo e valor máximo da coluna "atraso_saida". O que
 # esses valores significam?
+
+min(base_de_dados$atraso_saida, na.rm = TRUE)
+max(base_de_dados$atraso_saida, na.rm = TRUE) / 60
+
+min(base_de_dados$atraso_saida, na.rm = TRUE)
+
+atrasos <- base_de_dados$atraso_saida
+atrasos[atrasos > 0]
+min(atrasos[atrasos > 0], na.rm = TRUE)
+
+min(atrasos[atrasos >= 0], na.rm = TRUE)
+
+# voos que saem exatamente na hora
+sum(atrasos == 0, na.rm = TRUE)
+mean(atrasos == 0, na.rm = TRUE) * 100
+
+# voos que saem quase na hora
+sum(atrasos <= 10 & atrasos >= -10, na.rm = TRUE)
+mean(atrasos <= 10 & atrasos >= -10, na.rm = TRUE) * 100
+
+####
+
+library(dplyr)
+
+base_de_dados |>
+  filter(atraso_saida > 0) |>
+  summarise(atraso_min = min(atraso_saida, na.rm = TRUE))
+

@@ -25,7 +25,7 @@
 
 for (i in 1:10) {
 # escopo: números de 1 a 10, representados pela letra "i"
-  
+  Sys.sleep(0.2)
   print(i)
   # ação, que faz menção à letra i
 }
@@ -34,36 +34,36 @@ for (i in 1:10) {
 
 for (i in 1:10) {
   # escopo: números de 1 a 10, representados pela letra "i"
-  
+  Sys.sleep(0.2)
   # DAQUI PRA BAIXO VEM A AÇÃO:
-  
+
   quadrado_de_i <- i^2
   # a ação pode ter quantas linhas você quiser, é um trecho de código em que aplicam as mesmas regras
   # que estamos estudando até agora
-  
+
   # podemos criar uma variável, por exemplo!
-  
+
   print(quadrado_de_i)
   # terminamos igual fizemos na última vez: imprimindo algo no console
-  
+
 }
 
 # outro exemplo de ação
 
 for (i in 1:10) {
   # escopo: números de 1 a 10, representados pela letra "i"
-  
+  Sys.sleep(0.2)
   # DAQUI PRA BAIXO VEM A AÇÃO:
-  
+
   textinho_a_ser_impresso <- paste0("Esse é o passo: ", i)
   # a ação pode ter quantas linhas você quiser, é um trecho de código em que aplicam as mesmas regras
   # que estamos estudando até agora
-  
+
   # podemos criar uma variável, por exemplo!
-  
+
   print(textinho_a_ser_impresso)
   # terminamos igual fizemos na última vez: imprimindo algo no console
-  
+
 }
 
 # Exemplos de ESCOPO
@@ -88,11 +88,11 @@ meu-objeto <- 3
 # voltando ao primeiro exemplo:
 
 # for (PEDACO in VETOR_TOTAL){
-for (i in 1:10) {
+for (variavel in 1:10) {
 # VARIAVEL, aqui chamamos de i
 # o 1:10 representa o VETOR_TOTAL
-  
-  print(i)
+
+  print(variavel)
   # nossa ação. precissa mencionar a letra i
 }
 
@@ -103,7 +103,7 @@ aonde_vou_iterar <- 1:10
 for (i in aonde_vou_iterar) {
   # VARIAVEL, aqui chamamos de i
   # o 1:10 representa o VETOR_TOTAL
-  
+
   print(i)
   # nossa ação. precisa mencionar a letra i
 }
@@ -115,7 +115,7 @@ aonde_vou_iterar <- c("a", "b", "c", "d", "e", "f")
 for (i in aonde_vou_iterar) {
   # VARIAVEL, aqui chamamos de i
   # o 1:10 representa o VETOR_TOTAL
-  
+  Sys.sleep(0.2)
   print(i)
   # nossa ação. precisa mencionar a letra i
 }
@@ -128,7 +128,7 @@ aonde_vou_iterar <- c("c", "a", "d", "b", "e", "f")
 for (i in aonde_vou_iterar) {
   # VARIAVEL, aqui chamamos de i
   # o 1:10 representa o VETOR_TOTAL
-  
+  Sys.sleep(0.2)
   print(i)
   # nossa ação. precisa mencionar a letra i
 }
@@ -142,7 +142,7 @@ aonde_vou_iterar <- c("c", "a", "d", "b", "e", "f")
 for (variavel in aonde_vou_iterar) {
   # VARIAVEL, aqui chamamos de i
   # o 1:10 representa o VETOR_TOTAL
-  
+
   print(variavel)
   # nossa ação. precisa mencionar a letra i
 }
@@ -152,8 +152,19 @@ for (variavel in aonde_vou_iterar) {
 
 # 1. Crie um script que imprima o texto "Esse aqui é o número XX", onde XX varia de 1 a 50.
 
-# 2. Crie um script que calcule o quadrado dos números de 7 a 31, calcule o quadrado desses números e imprima na tela
-# Cada ver que a nossa AÇÃO for executada (calcular o quadrado), escreva seu programa de tal maneira que
+for (num in 1:50) {
+  Sys.sleep(0.2)
+  texto <- paste("Esse aqui é o número", num)
+  print(texto)
+}
+
+for (num in 1:50) {
+  Sys.sleep(0.2)
+  print(paste("Esse aqui é o número", num))
+}
+
+# 2. Crie um script que calcule o quadrado dos números de 7 a 31 e imprima na tela
+# Cada vez que a nossa AÇÃO for executada (calcular o quadrado), escreva seu programa de tal maneira que
 # o computador indique o que está fazendo, conforme o esquema abaixo:
 
 # "Iniciando ação",
@@ -166,6 +177,44 @@ for (variavel in aonde_vou_iterar) {
 # "Calculando o quadrado de 31"
 # "O quadrado de 31 vale 961"
 
+for(num in 7:31) {
+  Sys.sleep(0.4)
+  print("Iniciando ação")
+  print(paste("Calculando o quadrado de", num))
+  print(paste("O quadrado de", num, "vale", num ^ 2))
+  print("-------------------------------------------")
+}
+
+
+for(num in 7:31) {
+  Sys.sleep(0.4)
+
+  texto_inicial <-  "Iniciando ação"
+  print(texto_inicial)
+
+  texto_calculando <- paste("Calculando o quadrado de", num)
+  print(texto_calculando)
+
+  quadrado <- num ^ 2
+
+  texto_quadrado <- paste("O quadrado de", num, "vale", quadrado)
+
+  print(texto_quadrado)
+
+  print("-------------------------------------------")
+}
+
+
+paste("a", "b", sep = "@")
+
+paste0("a", "b")
+
+paste("a", "b", sep = "")
+
+
+
+
+
 # Mais utilidades do for
 
 # abrir arquivos manualmente e procurar por informações neles pode tomar muito do nosso tempo...
@@ -174,22 +223,26 @@ for (variavel in aonde_vou_iterar) {
 
 library(readr)
 
-arquivos_de_dados <- c("dados/voos_de_janeiro.csv", "dados/voos_de_fevereiro.csv", "dados/voos_de_marco.csv")
+arquivos_de_dados <- c(
+  "dados/voos_de_janeiro.csv",
+  "dados/voos_de_fevereiro.csv",
+  "dados/voos_de_marco.csv"
+)
 # vetor de textos com o caminhos dos nossos arquivos
 
 for(arquivo in arquivos_de_dados){
 # como ficou o nosso ESCOPO?
 # VARIAVEL aqui levou esse nome "arquivo"
 # VETOR_TOTAL aqui levou o nome "arquivos_de_dados"
-  
+
   dados <- read_csv2(arquivo)
-  
+
   maior_atraso <- max(dados$atraso_saida)
-  
+
   texto_de_saida <- paste0("O maior atraso no arquivo ", arquivo, " é ", maior_atraso)
-  
+
   print(texto_de_saida)
-  
+
 }
 
 # o que não está muito legal nesse código?
@@ -247,29 +300,73 @@ for(arquivo in arquivos_de_dados){
 arquivos <- c("dados/voos_de_janeiro.csv", "dados/voos_de_fevereiro.csv", "dados/voos_de_marco.csv")
 
 for(arquivo in arquivos){
-  
-  dados <- read_csv2(arquivo)
-  
+
+  suppressMessages({
+    dados <- read_csv2(arquivo, show_col_types = FALSE)
+  })
+
   maior_atraso <- max(dados$atraso_saida, na.rm = TRUE)
-  
+
   texto_de_saida <- paste0("O maior atraso no arquivo ", arquivo, " é ", maior_atraso)
-  
+
   print(texto_de_saida)
-  
+
 }
 
 # Exercícios --------------------------------------------------------------
 
+
 # 1. Inclua no nosso loop os arquivos que indo até junho
 
+arquivos <- c(
+  "dados/voos_de_janeiro.csv",
+  "dados/voos_de_fevereiro.csv",
+  "dados/voos_de_marco.csv",
+  "dados/voos_de_abril.csv",
+  "dados/voos_de_maio.csv",
+  "dados/voos_de_junho.csv"
+)
+
+for(arquivo in arquivos){
+
+  suppressMessages({
+    dados <- read_csv2(arquivo, show_col_types = FALSE)
+  })
+
+  maior_atraso <- max(dados$atraso_saida, na.rm = TRUE)
+
+  texto_de_saida <- paste0("O maior atraso no arquivo ", arquivo, " é ", maior_atraso)
+
+  print(texto_de_saida)
+
+}
+
+
 # 2. Adapte o script anterior para que ele imprima os maiores atrasos e também os voos que saíram mais adiantados.
+
+for(arquivo in arquivos){
+
+  suppressMessages({
+    dados <- read_csv2(arquivo, show_col_types = FALSE)
+  })
+
+  maior_atraso <- max(dados$atraso_saida, na.rm = TRUE)
+  voo_mais_adiantado <- min(dados$atraso_saida, na.rm = TRUE)
+
+  texto_voo_atrasado <- paste0("O maior atraso no arquivo ", arquivo, " é ", maior_atraso)
+  texto_voo_adiantado <- paste0("O voo que saiu mais adiantado no arquivo ", arquivo, " é ", voo_mais_adiantado)
+
+  print(texto_voo_adiantado)
+  print(texto_voo_atrasado)
+
+}
 
 # Dica: Na nossa base de dados um valor negativo na coluna "atraso_saida" indica que o voo saiu adiantado
 
 
 
 # While ------
-# O while é outra estrutura de repetição muito comum em 
+# O while é outra estrutura de repetição muito comum em
 # linguagens de programação.
 
 # Leia como: Enquanto uma condição for verdadeira, faça XYZ.
@@ -281,6 +378,14 @@ for(arquivo in arquivos){
 # Exemplo:
 dia <- 1
 while (dia < 30) {
+  Sys.sleep(0.2)
   print(paste0("O mês ainda não acabou! Hoje é dia ", dia, "!"))
   dia <- dia + 1
+}
+
+num_aleatorio <- 0
+while(num_aleatorio < 0.999) {
+  Sys.sleep(0.2)
+  num_aleatorio <- runif(1)
+  print(paste("O número sorteado foi:", round(num_aleatorio, 4)))
 }

@@ -41,6 +41,9 @@ Fora do horário de aula ou monitoria:
 | [01-introducao.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//01-introducao.R)                             |
 | [02-tabelas.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//02-tabelas.R)                                   |
 | [03-comparacoes-logicas-e-NA.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//03-comparacoes-logicas-e-NA.R) |
+| [04-filtros.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//04-filtros.R)                                   |
+| [05-pipe.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//05-pipe.R)                                         |
+| [06-loops.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//06-loops.R)                                       |
 
 ## Scripts aula prática
 
@@ -48,6 +51,7 @@ Fora do horário de aula ou monitoria:
 |:-----------------------------------------------------------------------------------------------------------------------------------|
 | [01-exemplo\_script.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//01-exemplo_script.R)  |
 | [02-exemplo-tabelas.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//02-exemplo-tabelas.R) |
+| [03-exemplo-for.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//03-exemplo-for.R)         |
 
 ## Trabalhos finais premiados
 
