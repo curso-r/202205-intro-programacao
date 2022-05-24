@@ -1,29 +1,57 @@
 # for + if é bem poderoso
 
-# existe uma outra maneira de usar o for, que é bem poderosa também: podemos 
+# existe uma outra maneira de usar o for, que é bem poderosa também: podemos
 # ir evoluindo nossas variáveis passo a passo.
 
-# vamos calcular a soma dos números de 1 a 30 números usando um laço, só pra ilustrar o conceito:
+# vamos calcular a soma dos números de 1 a 30 usando um laço, só pra ilustrar o conceito:
 
-# primeiro iniciamos o "repositório" dessa soma
+# primeiro iniciamos o "resultado" dessa soma
 soma_de_1_a_30 <- 0
 
-for(i in 1:30){
-  
+for(i in 1:30) {
+
   print(paste0("Passo ", i))
-  
+
   print(paste0("soma_de_1_a_30 está valendo ", soma_de_1_a_30))
-  
-  soma_de_1_a_30 <- soma_de_1_a_30+i
-  
+
+  soma_de_1_a_30 <- soma_de_1_a_30 + i
+
   print(paste0("Atualizei o soma_de_1_a_30, somando o valor de i, que é ", i))
-  
+  Sys.sleep(1)
 }
 
 # em cada passo:
 
 # a variável soma_de_1_a_30 começa em 0, que definimos fora do for, vai pouco a pouco recebendo o i da vez.
 # conforme o for vai andando dentro do vetor que definimos na linha 11, soma_de_1_a_30 vai ficando maior!
+
+for(i in 1:30) {
+
+  if (i == 1) {
+    soma_de_1_a_30 <- 0
+  }
+
+  print(paste0("Passo ", i))
+
+  print(paste0("soma_de_1_a_30 está valendo ", soma_de_1_a_30))
+
+  soma_de_1_a_30 <- soma_de_1_a_30 + i
+
+  print(paste0("Atualizei o soma_de_1_a_30, somando o valor de i, que é ", i))
+  Sys.sleep(1)
+}
+
+# iterando em linhas e colunas
+
+for (j in 1:ncol(mtcars)) {
+  print(paste("Estou na coluna", names(mtcars)[j]))
+  for (i in 1:nrow(mtcars)) {
+    print(paste("Estou na linha", i, "que tem o valor", mtcars[i,j]))
+    Sys.sleep(0.3)
+  }
+  print("-----------------------")
+  Sys.sleep(1)
+}
 
 # Outro exemplo:
 
@@ -48,27 +76,30 @@ lista_de_aeroportos <- unique(base_de_dados$origem)
 vetor_de_medias <- NULL
 
 for(aeroporto in lista_de_aeroportos){
-  
+
   print(paste0("Calculando média dos voos que saíram de ", aeroporto))
-  
+
   print(paste0("Filtrando a base..."))
-  
+
   base_filtrada <- base_de_dados[base_de_dados$origem == aeroporto, ]
-  
+
   print(paste0("Calculando a média..."))
-  
+
   media <- mean(base_filtrada$atraso_saida, na.rm = TRUE)
-  
+
   print(paste0("A média de atraso dos voos que saíram de ", aeroporto, " é ", media))
-  
+
   print(paste0("Salvando em um vetor..."))
-  
+
   # aqui está o pulo do gato!
   vetor_de_medias <- c(vetor_de_medias, media)
-  
+
   print(paste0("Vetor ao final do cálculo do aeroporto ", aeroporto, ":"))
   print(vetor_de_medias)
-  
+  print("------------------------------------------")
+  Sys.sleep(2)
+
+
 }
 
 # as médias estão chegando no "vetor_de_medias" conforme elas vão sendo
@@ -88,27 +119,58 @@ tabela_de_medias_por_aeroporto <- data.frame(
 vetor_de_medias <- NULL
 
 for(aeroporto in lista_de_aeroportos){
-  
+
   print(paste0("Calculando média dos voos que saíram de ", aeroporto))
-  
+
   print(paste0("Filtrando a base..."))
-  
+
   base_filtrada <- base_de_dados[base_de_dados$origem == aeroporto, ]
-  
+
   print(paste0("Calculando a média..."))
-  
+
   media <- mean(base_filtrada$atraso_saida, na.rm = TRUE)
-  
+
   print(paste0("A média de atraso dos voos que saíram de ", aeroporto, " é ", media))
-  
+
   print(paste0("Salvando em um vetor..."))
-  
+
   # aqui está o pulo do gato!
   vetor_de_medias <- c(media, vetor_de_medias)
-  
+
   print(paste0("Vetor ao final do cálculo do aeroporto ", aeroporto, ":"))
   print(vetor_de_medias)
-  
+
+}
+
+# usando if para não precisar criar o vetor de medias antes
+
+for(aeroporto in lista_de_aeroportos) {
+
+  if (aeroporto == lista_de_aeroportos[1]) {
+    vetor_de_medias <- NULL
+  }
+
+  print(paste0("Calculando média dos voos que saíram de ", aeroporto))
+
+  print(paste0("Filtrando a base..."))
+
+  base_filtrada <- base_de_dados[base_de_dados$origem == aeroporto, ]
+
+  print(paste0("Calculando a média..."))
+
+  media <- mean(base_filtrada$atraso_saida, na.rm = TRUE)
+
+  print(paste0("A média de atraso dos voos que saíram de ", aeroporto, " é ", media))
+
+  print(paste0("Salvando em um vetor..."))
+
+  # aqui está o pulo do gato!
+  vetor_de_medias <- c(media, vetor_de_medias)
+
+  print(paste0("Vetor ao final do cálculo do aeroporto ", aeroporto, ":"))
+  print(vetor_de_medias)
+  print("------------------------------------------")
+  Sys.sleep(2)
 }
 
 # agora entrou ao contrário, por causa do jeito que escrevemos na linha 96
@@ -117,28 +179,28 @@ for(aeroporto in lista_de_aeroportos){
 #vetor_de_medias <- NULL
 
 for(aeroporto in lista_de_aeroportos){
-  
+
   print(paste0("Calculando média dos voos que saíram de ", aeroporto))
-  
+
   print(paste0("Filtrando a base..."))
-  
+
   base_filtrada <- base_de_dados[base_de_dados$origem == aeroporto, ]
-  
+
   print(paste0("Calculando a média..."))
-  
+
   media <- mean(base_filtrada$atraso_saida, na.rm = TRUE)
-  
+
   print(paste0("A média de atraso dos voos que saíram de ", aeroporto, " é ", media))
-  
+
   # sem as linhas abaixo o ródigo roda normal:
   #print(paste0("Salvando em um vetor..."))
-  
+
   # aqui está o pulo do gato!
   #vetor_de_medias <- c(media, vetor_de_medias)
-  
+
   #print(paste0("Vetor ao final do cálculo do aeroporto ", aeroporto, ":"))
   #print(vetor_de_medias)
-  
+
 }
 
 # Exercício
@@ -149,7 +211,68 @@ for(aeroporto in lista_de_aeroportos){
 # Você pode conseguir uma lista desses destinos fazendo:
 # lista_de_aeroportos_de_destino <- unique(base_de_dados$destino)
 
+lista_de_aeroportos_de_destino <- unique(base_de_dados$destino)
 
-# 2. Calcule o mínimo o médio e o máximo desse vetor. Quais são os destinos em que os voos chegam com maior atraso?
+for (aeroporto in lista_de_aeroportos_de_destino) {
+
+  if (aeroporto == lista_de_aeroportos_de_destino[1]) {
+    vetor_de_medias <- NULL
+  }
+
+  print(paste0("Calculando média dos voos que chegaram no aeroporto ", aeroporto))
+
+  print(paste0("Filtrando a base..."))
+
+  base_filtrada <- base_de_dados[base_de_dados$destino == aeroporto, ]
+  # base_filtrada <- filter(base_de_dados, destino == aeroporto)
+
+  print(paste0("Calculando a média..."))
+
+  media <- mean(base_filtrada$atraso_chegada, na.rm = TRUE)
+
+  vetor_de_medias <- c(media, vetor_de_medias)
+
+  print(paste0("Vetor ao final do cálculo do aeroporto ", aeroporto, ":"))
+  print(vetor_de_medias)
+  print("------------------------------------------")
+  # Sys.sleep(1)
+
+}
+
+tabela_de_medias_chegada <- data.frame(
+  aeroporto = lista_de_aeroportos_de_destino,
+  atraso_medio_chegada = vetor_de_medias
+)
+
+# 2. Calcule o mínimo, a média e o máximo desse vetor. Quais são os destinos em que os voos chegam com maior atraso?
 # Para te ajudar a visualizar o resultado você poderia organizar os resultados em um data.frame.
+
+min(tabela_de_medias_chegada$atraso_medio_chegada)
+tabela_de_medias_chegada[
+  tabela_de_medias_chegada$atraso_medio_chegada == min(tabela_de_medias_chegada$atraso_medio_chegada),
+]
+
+filter(tabela_de_medias_chegada, atraso_medio_chegada == min(atraso_medio_chegada))
+
+max(tabela_de_medias_chegada$atraso_medio_chegada)
+tabela_de_medias_chegada[
+  tabela_de_medias_chegada$atraso_medio_chegada == max(tabela_de_medias_chegada$atraso_medio_chegada),
+]
+
+mean(tabela_de_medias_chegada$atraso_medio_chegada)
+
+# Ordenando uma base da dados
+
+# R base
+order(tabela_de_medias_chegada$atraso_medio_chegada)
+
+tabela_de_medias_chegada[order(tabela_de_medias_chegada$atraso_medio_chegada), ]
+tabela_de_medias_chegada[rev(order(tabela_de_medias_chegada$atraso_medio_chegada)), ] #decrescente
+
+# dplyr
+
+arrange(tabela_de_medias_chegada, atraso_medio_chegada)
+arrange(tabela_de_medias_chegada, desc(atraso_medio_chegada)) # decrescente
+
+
 

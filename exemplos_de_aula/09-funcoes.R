@@ -4,8 +4,8 @@
 # Funções são nomes que guardam um código de R. Esse código é
 # avaliado quando rodamos uma função.
 
-# As funções permitem automatizar algumas tarefas comuns de uma forma mais 
-# poderosa e geral do que copiar e colar. 
+# As funções permitem automatizar algumas tarefas comuns de uma forma mais
+# poderosa e geral do que copiar e colar.
 
 ## Argumentos --------------------------
 
@@ -20,7 +20,7 @@ c(1, 3, 5)
 
 # 2) argumentos que controlam os detalhes do que deve ser executado.
 
-# Geralmente os argumentos relativos aos dados são os primeiros. 
+# Geralmente os argumentos relativos aos dados são os primeiros.
 
 
 
@@ -29,7 +29,7 @@ c(1, 3, 5)
 
 # EX. função round() é utilizada para arredondar valores.
 
-# Ela recebe os argumentos: 
+# Ela recebe os argumentos:
 # x - o número para arredondar, e
 # digits - o número de casas decimais para serem mantidas.
 
@@ -45,18 +45,18 @@ round(10.555, 2) # argumento digits informado, usará 2 casas decimais
 
 
 
-# Caso você não nomeie os argumentos, a ordem deles será  importante! 
+# Caso você não nomeie os argumentos, a ordem deles será  importante!
 
 round(x = 10.55, digits = 1) # O resultado será o que queremos!
 
 round(digits = 1, x = 10.55)  # O resultado será o que queremos! Está fora de
-# ordem, porém os argumentos foram nomeados. 
+# ordem, porém os argumentos foram nomeados.
 
-round(10.55, 1) # O resultado será o que queremos! Os argumentos não foram 
+round(10.55, 1) # O resultado será o que queremos! Os argumentos não foram
 # nomeados, porém estão na ordem em que aparecem na função.
 
-round(1, 10.55) # O resultado não será o que queremos :( trocamos a ordem dos 
-# argumentos e não passamos os nomes, portanto o R entenderá que 1 é o numero 
+round(1, 10.55) # O resultado não será o que queremos :( trocamos a ordem dos
+# argumentos e não passamos os nomes, portanto o R entenderá que 1 é o numero
 # que queremos arredondar, e 10.55 é o número de casas decimais para arredondar
 
 
@@ -71,14 +71,18 @@ help(round)
 
 # Estrutura de uma função
 
-# nome_da_funcao <- function(argumentos){
+# nome_da_funcao <- function(a, b, c) {
 #   corpo_da_funcao
 # }
 
-# As funções devem ter nomes! 
+nome_da_funcao(a = 1, b = 2, c = 3)
+nome_da_funcao(1, 2, 3)
+
+
+# As funções devem ter nomes!
 # Listar os argumentos da função que você quer criar dentro da funcão function() .
 # Depois dos argumentos, dentro das chaves {}, escrever o corpo da função,
-# ou seja, o que deve ser executado quando a função for utilizada. 
+# ou seja, o que deve ser executado quando a função for utilizada.
 
 # Dica: É mais fácil começar com um código que funciona e converte-lo em uma função.
 
@@ -88,8 +92,9 @@ help(round)
 # Primeiro vamos fazer um código simples, e depois transformaremos em uma função.
 
 valor_em_dolar <- 99
-cotacao_dolar_em_real <- 5.16 # em 6 de setembro de 2021
+cotacao_dolar_em_real <- 4.81 # em 23 de maio de 2022
 # podemos consultar a taxa no site do Banco central: https://www.bcb.gov.br/
+
 valor_em_real <- valor_em_dolar * cotacao_dolar_em_real
 valor_em_real
 
@@ -97,9 +102,9 @@ valor_em_real
 # Ou seja, o que precisamos informar para que o cálculo seja realizado?
 # O valor que desejamos em dolar que desejamos converter em real,
 # e a cotação do dólar em real! Portanto serão nossos argumentos.
-# E o que colocaremos no corpo da função? 
+# E o que colocaremos no corpo da função?
 
-converter_dolar_para_real <- function(valor_em_dolar, cotacao_dolar_em_real = 5.16){
+converter_dolar_para_real <- function(valor_em_dolar, cotacao_dolar_em_real = 4.81){
   valor_em_real <- valor_em_dolar * cotacao_dolar_em_real
   valor_em_real
 }
@@ -109,22 +114,88 @@ converter_dolar_para_real(799)
 
 # e qual seria o valor se o dolar estivesse com outra cotação?
 # usando a cotacao de 2016 - 02/09/2016
-converter_dolar_para_real(799, 3.24)
+converter_dolar_para_real(799, 4.50)
 
 
 # Função source ------------------------------------------------------
 
-# Para organizar  o projeto e o código, podemos deixar as funções em outro(s) 
+# Para organizar  o projeto e o código, podemos deixar as funções em outro(s)
 # arquivo(s) .R,  e carregá-las no script que estamos utilizando com a função source():
 
 # source("caminho_para_o_arquivo.R")
 
-# Atenção: a função source() vai executar todo o código que está no arquivo! 
+# Atenção: a função source() vai executar todo o código que está no arquivo!
 # Caso no arquivo tenha variáveis sendo criadas, elas serão carregadas também.
 
 # Ex:
-listar_arquivos("exemplos_de_aula/")
+listar_arquivos_R("exemplos_de_aula/")
 
-source("exemplos_de_aula/exemplo-source.R")
+source("exemplos_de_aula/11-exemplo-source.R")
 
-listar_arquivos("exemplos_de_aula/")
+listar_arquivos_R("exemplos_de_aula/")
+listar_arquivos_R()
+
+
+# -------------------------------------------------------------------------
+
+soma_de_1_a_30 <- 0
+
+for(i in 1:30) {
+
+  print(paste0("Passo ", i))
+
+  print(paste0("soma_de_1_a_30 está valendo ", soma_de_1_a_30))
+
+  soma_de_1_a_30 <- soma_de_1_a_30 + i
+
+  print(paste0("Atualizei o soma_de_1_a_30, somando o valor de i, que é ", i))
+  Sys.sleep(1)
+}
+
+
+nossa_soma <- function(vetor) {
+
+  for (num in vetor) {
+    if (num == vetor[1]) {
+      soma <- 0
+    }
+
+    soma <- soma + num
+  }
+
+  soma
+
+}
+
+nossa_soma(c(1, 2))
+res <- nossa_soma(c(1, 2))
+res
+
+nossa_soma(1:100)
+sum(1:100)
+
+
+soma_impares <- function(vetor) {
+
+  for (num in vetor) {
+    if (num == vetor[1]) {
+      soma <- 0
+    }
+
+    if (num %% 2 != 0) {
+      soma <- soma + num
+    }
+
+  }
+
+  soma
+
+}
+
+soma_impares(c(1, 3))
+soma_impares(c(2, 4))
+soma_impares(c(1, 2))
+soma_impares(1:100)
+
+
+

@@ -44,6 +44,9 @@ Fora do horário de aula ou monitoria:
 | [04-filtros.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//04-filtros.R)                                   |
 | [05-pipe.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//05-pipe.R)                                         |
 | [06-loops.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//06-loops.R)                                       |
+| [07-controle-de-fluxo.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//07-controle-de-fluxo.R)               |
+| [08-loops-com-if.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//08-loops-com-if.R)                         |
+| [09-funcoes.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/exemplos_de_aula//09-funcoes.R)                                   |
 
 ## Scripts aula prática
 
@@ -52,6 +55,7 @@ Fora do horário de aula ou monitoria:
 | [01-exemplo\_script.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//01-exemplo_script.R)  |
 | [02-exemplo-tabelas.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//02-exemplo-tabelas.R) |
 | [03-exemplo-for.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//03-exemplo-for.R)         |
+| [04-exemplo-for-if.R](https://raw.githubusercontent.com/curso-r/202205-intro-programacao/main/aula_pratica//04-exemplo-for-if.R)   |
 
 ## Trabalhos finais premiados
 
