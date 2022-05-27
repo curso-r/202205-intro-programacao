@@ -2,10 +2,10 @@
 
 ## Instalar pacotes do CRAN ------------
 
-# É necessário usar a função 
+# É necessário usar a função
 # install.packages("nome_do_pacote") - USAR ASPAS!
 
-install.packages("readr") # Não execute agora. 
+install.packages("readr") # Não execute agora.
 
 
 ## Instalar Pacotes do GitHub ----------
@@ -14,21 +14,21 @@ install.packages("readr") # Não execute agora.
 # devtools.
 # Então primeiro é necessário instalar esse pacote:
 
-install.packages("devtools")  # Não execute agora. 
+install.packages("devtools")  # Não execute agora.
 
-# Depois use a função install_github(). 
-# Você deve indicar entre aspas qual é o pacote 
+# Depois use a função install_github().
+# Você deve indicar entre aspas qual é o pacote
 # que quer instalar,
 # sendo neste padrão: "organizacao/pacote"
 # (o pacote pode "ser" de alguma pessoa também)
 
-devtools::install_github("tidyverse/readr")  # Não execute agora. 
+devtools::install_github("tidyverse/readr")  # Não execute agora.
 
 # https://github.com/tidyverse/readr
 
 # Carregar pacotes --------------
 
-# Use a função library(pacote), não é necessário 
+# Use a função library(pacote), não é necessário
 # usar aspas.
 
 
@@ -41,7 +41,7 @@ library(readr)
 # ao longo do tempo.
 # Para obter versões mais recentes de pacotes já instalados, é necessário
 # atualizar os pacotes.
-# É possível atualizar os pacotes utilizando código, 
+# É possível atualizar os pacotes utilizando código,
 # ou usando o RStudio.
 
 # Com código
@@ -49,8 +49,8 @@ library(utils)
 update.packages()
 
 
-# Na interface gráfica do RStudio: 
-# Na barra superior: Tools > "Check for package updates" > Selecione os pacotes 
+# Na interface gráfica do RStudio:
+# Na barra superior: Tools > "Check for package updates" > Selecione os pacotes
 # para atualizar > "Install updates"
 
 
